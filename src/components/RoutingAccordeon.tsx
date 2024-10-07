@@ -1,28 +1,33 @@
 import { Button, Stack } from "@mui/material";
+import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const RoutingAccordeon = () => {
-  const handleScrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <Stack direction={"row"}>
-      <Button onClick={() => handleScrollToSection("about-me")}>
-        About Me
-      </Button>
-      <Button onClick={() => handleScrollToSection("education")}>
-        Education
-      </Button>
-      <Button onClick={() => handleScrollToSection("career")}>Career</Button>
-      <Button onClick={() => handleScrollToSection("projects")}>
-        Projects
-      </Button>
-      <Button onClick={() => handleScrollToSection("contact-me")}>
-        Contact Me
-      </Button>
+      <RoutingButton route={"about"} text={"About Me"} />
+      <RoutingButton route={"projects"} text={"Projects"} />
+      <RoutingButton route={"contact"} text={"Contact"} />
     </Stack>
+  );
+};
+
+const RoutingButton: FC<{ route: string; text: string }> = ({
+  route,
+  text,
+}) => {
+  const navigate = useNavigate();
+
+  return (
+    <Button
+      sx={{
+        color: "#1ae8e8",
+        fontSize: "1.2rem",
+        fontWeight: "400",
+      }}
+      onClick={() => navigate(route)}
+    >
+      {text}
+    </Button>
   );
 };
