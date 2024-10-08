@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Yarn
+.yarn
+.yarn/install-state.gz
+.yarn/cache
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
