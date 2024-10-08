@@ -10,6 +10,7 @@ import { ChangeEvent, FC, PropsWithChildren, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { downloadFile } from "../util/util";
+import EmailIcon from '@mui/icons-material/Email';
 
 export const CustomContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -33,6 +34,7 @@ export const CustomContainer: FC<PropsWithChildren> = ({ children }) => {
           <NavigationButton route={"/contact"} text={"Contact"} />
           <DownloadButton text={"CV"} />
           <LanguageSwitch />
+          <EmailIcon />
         </Stack>
       </Stack>
       <Box sx={{ padding: 3 }}>{children}</Box>
@@ -113,3 +115,7 @@ const LanguageSwitch: FC = () => {
     </Box>
   );
 };
+
+const IconUrlButton = () => {
+
+}
