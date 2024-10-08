@@ -1,5 +1,5 @@
-import { RoutingAccordeon } from "../components/RoutingAccordeon";
-import { Heading } from "../components/Heading";
+import { Heading } from "../components/welcome/Heading";
+import { RoutingAccordeon } from "../components/welcome/RoutingAccordeon";
 import { Stack } from "@mui/material";
 
 export const WelcomePage = () => {

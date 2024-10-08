@@ -9,6 +9,7 @@ import {
 import { ChangeEvent, FC, PropsWithChildren, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { downloadFile } from "../util/util";
 
 export const CustomContainer: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -68,9 +69,7 @@ const DownloadButton: FC<{
 }> = ({ text }) => {
   return (
     <Button
-      onClick={() => {
-        console.log("download logic");
-      }}
+      onClick={() => { downloadFile(); }}
       sx={{
         color: "#1ae8e8",
         borderRadius: 2,
